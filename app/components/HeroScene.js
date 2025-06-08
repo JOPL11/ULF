@@ -19,19 +19,57 @@ const CameraController = () => {
     orbitControls.dampingFactor = 0.5; // Even more friction for slower movement
     orbitControls.rotateSpeed = 0.15; // Much slower rotation speed
     orbitControls.screenSpacePanning = false;
-    // Using numeric values directly to avoid THREE.MOUSE dependency
-    // 0: LEFT, 1: MIDDLE, 2: RIGHT
-    orbitControls.mouseButtons = {
-      LEFT: 0,    // ROTATE
-      MIDDLE: 1,  // DOLLY
-      RIGHT: 2    // PAN
-    };
-    orbitControls.touchAction = 'none'; // Prevent touch scroll
+    
+    // Check for iOS devices
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    
+    // Disable all controls on iOS
+    if (isIOS) {
+      orbitControls.enableRotate = false;
+      orbitControls.enablePan = false;
+      orbitControls.enableZoom = false;
+      
+      // Make the canvas non-interactive on iOS
+      gl.domElement.style.touchAction = 'auto';
+      gl.domElement.style.pointerEvents = 'none';
+      
+      // Add a wrapper to handle touch events on iOS
+      const wrapper = document.createElement('div');
+      wrapper.style.width = '100%';
+      wrapper.style.height = '100%';
+      wrapper.style.position = 'absolute';
+      wrapper.style.top = '0';
+      wrapper.style.left = '0';
+      wrapper.style.zIndex = '1';
+      gl.domElement.parentNode.insertBefore(wrapper, gl.domElement);
+      
+      // Prevent default touch behavior on the wrapper
+      wrapper.addEventListener('touchmove', (e) => {
+        e.stopPropagation();
+      }, { passive: false });
+      
+      // Clean up
+      return () => {
+        if (wrapper.parentNode) {
+          wrapper.parentNode.removeChild(wrapper);
+        }
+        orbitControls.dispose();
+      };
+    } else {
+      // Enable controls for non-iOS devices
+      orbitControls.mouseButtons = {
+        LEFT: 0,    // ROTATE
+        MIDDLE: 1,  // DOLLY
+        RIGHT: 2    // PAN
+      };
+      orbitControls.touchAction = 'pan-y';
+    }
+    
     // Remove azimuth constraints for infinite horizontal rotation
     orbitControls.minPolarAngle = Math.PI / 2 - 0.2; // Keep slight vertical movement constraint
     orbitControls.maxPolarAngle = Math.PI / 2 + 0.2;
     // Removed min/maxAzimuthAngle for infinite horizontal rotation
-    orbitControls.enableDamping = true;
     orbitControls.dampingFactor = 0.05; // Increased damping for smoother infinite rotation
     orbitControls.rotateSpeed = 0.8; // Slightly faster rotation for better feel
     orbitControls.enableSmoothTime = true; // Enable smooth interpolation
