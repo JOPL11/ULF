@@ -16,9 +16,6 @@
   background: #ffffff;
   position: relative;
   overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: none;
-  touch-action: pan-y;
 }
 
 .contentWrapper {
@@ -27,9 +24,6 @@
   min-height: 100vh;
   position: relative;
   width: 100%;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: none;
-  touch-action: pan-y;
 }
 
 .pageContent {
