@@ -132,15 +132,24 @@ a.secondary {
   gap: 24px;
 }
 
-.imageContainer {
+.heroContainer {
   width: 100%;
-  max-width: 1200px;
   height: 80vh;
-  min-height: 400px;
-  margin: 0 auto;
+  min-height: 500px;
   position: relative;
-  padding: 0 1rem 2rem;
-  margin-bottom: 1rem;
+  overflow: hidden;
+  background: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.heroContainer canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.imageContainer {
+  display: none;
 }
 
 /* Headline Styles */

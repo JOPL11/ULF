@@ -67,15 +67,113 @@
 .footerSection a {
   color: #333;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .footerSection a:hover {
   color: #D21034;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-decoration-color: #D21034;
+  text-decoration: none;
+  transform: translateX(4px);
+}
+
+.socialList a {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.socialList a:hover {
+  background-color: rgba(210, 16, 52, 0.05);
+  transform: translateX(4px);
+}
+
+.socialEmoji {
+  font-size: 1.25rem;
+  width: 1.5rem;
+  display: inline-flex;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.socialList a:hover .socialEmoji {
+  transform: scale(1.2);
+}
+
+/* Social Links */
+.socialLinks {
+  display: flex !important;
+  gap: 1.5rem;
+  margin: 2rem 0 0 0;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+  border-top: 1px solid #eee;
+  justify-content: center;
+  width: 100%;
+}
+
+.socialIcon {
+  font-size: 2rem !important;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  color: #333;
+}
+
+.socialLinks a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.socialLinks a:hover {
+  background-color: #D21034;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(210, 16, 52, 0.3);
+}
+
+.socialLinks a:active {
+  transform: translateY(-1px);
+}
+
+.socialIcon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.socialLinks a {
+  color: #333;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+.socialLinks a:hover {
+  background-color: #D21034;
+  color: white;
+  transform: translateY(-3px);
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.socialLinks a:active {
+  transform: translateY(-1px);
 }
 
 .footerBottom {

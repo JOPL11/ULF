@@ -1,0 +1,39 @@
+.languageSwitcher {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 8px;
+}
+
+.flagButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  transition: transform 0.2s;
+  opacity: 0.7;
+  display: block;
+}
+
+.flagButton:hover {
+  transform: scale(1.15);
+  opacity: 1;
+}
+
+.flagButton.active {
+  transform: scale(1.2);
+  opacity: 1;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8));
+}
+
+.flagButton:active {
+  transform: scale(0.95);
+}
