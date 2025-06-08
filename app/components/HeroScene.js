@@ -8,13 +8,7 @@ import { Suspense, useRef, useEffect, useState } from 'react';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import dynamic from 'next/dynamic';
 
-// Check if running on Android (we'll show static version on Android only)
-const isAndroid = () => {
-  if (typeof window === 'undefined') return false;
-  return /Android/i.test(navigator.userAgent);
-};
-
-// Check if running on iOS (we'll show 3D on iOS)
+// Check if running on iOS (for specific behavior in CameraController)
 const isIOS = () => {
   if (typeof window === 'undefined') return false;
   return /iPad|iPhone|iPod/.test(navigator.userAgent) || 
@@ -199,26 +193,18 @@ function Scene() {
 // Export the 3D scene as a named component
 const ThreeDScene = Scene;
 
-// Main export with device detection
+// Main export - always show 3D scene
 export default function HeroScene() {
-  const [shouldUseStatic, setShouldUseStatic] = useState(false);
   const [isClient, setIsClient] = useState(false);
   
   useEffect(() => {
-    // Set client-side flag and check if we should use static version
+    // Set client-side flag
     setIsClient(true);
-    setShouldUseStatic(isAndroid());
   }, []);
 
   // Show loading state during initial render to avoid hydration mismatch
   if (!isClient) {
     return <div style={{ width: '100%', height: '100vh', backgroundColor: '#ffffff' }} />;
-  }
-
-  // Show static version on Android, 3D on all other devices including iOS
-  if (shouldUseStatic) {
-    const StaticHero = dynamic(() => import('./StaticHero'), { ssr: false });
-    return <StaticHero />;
   }
 
   return <ThreeDScene />;
