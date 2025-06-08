@@ -4,8 +4,16 @@ import { Canvas, useThree, useFrame } from '@react-three/fiber';
 import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
 import { TextureLoader } from 'three';
-import { Suspense, useRef, useEffect } from 'react';
+import { Suspense, useRef, useEffect, useState } from 'react';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import dynamic from 'next/dynamic';
+
+// Check if running on iOS
+const isIOS = () => {
+  if (typeof window === 'undefined') return false;
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+         (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+};
 
 const CameraController = () => {
   const { camera, gl } = useThree();
@@ -182,4 +190,22 @@ function Scene() {
   );
 }
 
-export default Scene;
+// Export the 3D scene as a named component
+const ThreeDScene = Scene;
+
+// Main export with iOS detection
+export default function HeroScene() {
+  const [isClient, setIsClient] = useState(false);
+  
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // On iOS, render the static hero instead of the 3D scene
+  if (isClient && isIOS()) {
+    const StaticHero = dynamic(() => import('./StaticHero'), { ssr: false });
+    return <StaticHero />;
+  }
+
+  return <ThreeDScene />;
+}
