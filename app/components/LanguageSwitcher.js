@@ -1,6 +1,7 @@
 'use client';
 
 import { useLanguage } from '../context/LanguageContext';
+import Image from 'next/image';
 import styles from './LanguageSwitcher.module.css';
 
 const languages = [
@@ -33,6 +34,16 @@ export default function LanguageSwitcher() {
           {lang.flag}
         </button>
       ))}
+      <div className={styles.logoContainer}>
+        <Image 
+          src="/images/ulf.png" 
+          alt="ULF Logo" 
+          width={175} 
+          height={175}
+          className={styles.logo}
+          priority
+        />
+      </div>
     </div>
   );
 }

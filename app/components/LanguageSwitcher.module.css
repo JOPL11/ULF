@@ -37,3 +37,20 @@
 .flagButton:active {
   transform: scale(0.95);
 }
+
+.logoContainer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  margin-top: 5px;
+}
+
+.logo {
+  width: 175px;
+  height: auto;
+  object-fit: contain;
+}
