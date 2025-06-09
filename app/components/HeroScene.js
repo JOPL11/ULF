@@ -126,8 +126,9 @@ function Plane({ position, rotation, textureUrl, scale }) {
 }
 
 function Scene() {
+  const styles = require('./HeroScene.module.css');
   return (
-    <div style={{ 
+    <div className={styles.canvasContainer} style={{ 
       width: '100vw',
       height: '100%',
       position: 'relative',

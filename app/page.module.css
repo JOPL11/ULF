@@ -183,6 +183,7 @@ a.secondary {
   overflow: hidden;
   background: #ffffff;
   margin-bottom: 2rem;
+  border-radius: 150px;
 }
 
 .heroContainer canvas {
