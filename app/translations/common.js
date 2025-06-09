@@ -2,8 +2,8 @@ export const commonTranslations = {
   en: {
     // Hero section
     heroTitle: "Awesome quality food culture & international cuisine",
-    mainTitle: "🎉 Harmony Fest 2025: Taste the World, Unite as One! 🌍❤️🔥",
-    mainDescription: "Get ready for a historic celebration of flavor, rhythm, and unity at the first-ever Harmony Fest—a festival where cultures collide in the best way possible! This is more than just an event; it's a movement. A place where we break bread, share stories, and build bridges through food, music, and truth.",
+    mainTitle: "🎉 ULF Festival 2025: Taste the World, Unite as One! 🌍❤️🔥",
+    mainDescription: "Get ready for a historic celebration of flavor, rhythm, and unity at the first-ever Union of Love festival where cultures collide in the best way possible! This is more than just an event; it's a movement. A place where we break bread, share stories, and build bridges through food, music, and truth.",
     
     // Haiti section
     haitiTitle: "🇭🇹 Celebrating Haitian Heart & Soul",
@@ -53,9 +53,9 @@ export const commonTranslations = {
     // Footer
     footer: {
       title: "Come Hungry, Leave Full—In Every Way!",
-      description: "Whether you're a foodie, a music lover, or just someone who believes in good vibes, International Harmony Fest is your place to feast, dance, and connect. Fill our hearts as much as our plates!",
+      description: "Whether you're a foodie, a music lover, or just someone who believes in good vibes, Union of Love Festival is your place to feast, dance, and connect. Fill our hearts as much as our plates!",
       whereWhen: "Where & When:",
-      locationDate: "[Location + Date]",
+      locationDate: "Fort Liberte + 6- 7- 8.7.2025",
       tickets: "Bracelets:",
       ticketLink: "[Link] (Early birds get extra treats!)",
       closing: "See you there—ready to eat, dance, and spread the love! ✨"
@@ -87,8 +87,8 @@ export const commonTranslations = {
   es: {
     // Hero section
     heroTitle: "Cultura gastronómica de alta calidad y cocina internacional",
-    mainTitle: "🎉 Harmony Fest 2025: ¡Prueba el Mundo, Únete como Uno! 🌍❤️🔥",
-    mainDescription: "Prepárate para una celebración histórica de sabor, ritmo y unidad en el primer Harmony Fest, ¡un festival donde las culturas chocan de la mejor manera posible! Esto es más que un simple evento; es un movimiento. Un lugar donde partimos el pan, compartimos historias y construimos puentes a través de la comida, la música y la verdad.",
+    mainTitle: "🎉 ULF Festival 2025: ¡Prueba el Mundo, Únete como Uno! 🌍❤️🔥",
+    mainDescription: "Prepárate para una celebración histórica de sabor, ritmo y unidad en el primer ULF Festival, ¡un festival donde las culturas chocan de la mejor manera posible! Esto es más que un simple evento; es un movimiento. Un lugar donde partimos el pan, compartimos historias y construimos puentes a través de la comida, la música y la verdad.",
     
     // Haiti section
     haitiTitle: "🇭🇹 Celebrando el Corazón y el Alma de Haití",
@@ -129,7 +129,7 @@ export const commonTranslations = {
     // Important Info
     importantInfo: {
       edition: "Primera Edición – ¡Lanzamiento en 2025!",
-      description: "Esto es solo el comienzo. Harmony Fest regresará cada año, más grande y audaz, pero la misión seguirá siendo la misma: unidad a través de la cultura.",
+      description: "Esto es solo el comienzo. ULF Festival regresará cada año, más grande y audaz, pero la misión seguirá siendo la misma: unidad a través de la cultura.",
       tickets: "¡Las entradas se agotan rápido!",
       hotels: "Hoteles reservados por separado – ¡Planifica tu estadía con anticipación!",
       closing: "Ven con hambre. Vete lleno—de comida, de corazón y de alma. Hagamos historia juntos. ❤️🔥"
@@ -138,9 +138,9 @@ export const commonTranslations = {
     // Footer
     footer: {
       title: "¡Ven con Hambre, Vete Lleno—En Todo Sentido!",
-      description: "Ya seas un foodie, un amante de la música o simplemente alguien que cree en las buenas vibras, International Harmony Fest es tu lugar para festejar, bailar y conectar. ¡Llena nuestros corazones tanto como nuestros platos!",
+      description: "Ya seas un foodie, un amante de la música o simplemente alguien que cree en las buenas vibras, International ULF Festival es tu lugar para festejar, bailar y conectar. ¡Llena nuestros corazones tanto como nuestros platos!",
       whereWhen: "¿Dónde y Cuándo?",
-      locationDate: "[Ubicación + Fecha]",
+      locationDate: "Fort Liberte + 6- 7- 8.7.2025",
       tickets: "Pulseras:",
       ticketLink: "[Enlace] (¡Los primeros en comprar obtienen beneficios adicionales!)",
       closing: "¡Nos vemos allí—listos para comer, bailar y esparcir amor! ✨"
@@ -172,8 +172,8 @@ export const commonTranslations = {
   ht: {
     // Hero section
     heroTitle: "Bon kalite manje kilti ak kwizin enternasyonal",
-    mainTitle: "🎉 Harmony Fest 2025: Goute Mond Lan, Ansanm Nou Fò! 🌍❤️🔥",
-    mainDescription: "Pare kò w pou yon selebrasyon istorik gou, ritm ak inite nan premye Harmony Fest la—yon festival kote kilti rankontre nan pi bon fason posib! Sa se plis pase yon evènman; se yon mouvman. Yon kote nou pataje pen, rakonte istwa ak bati pon atravè manje, mizik ak verite.",
+    mainTitle: "🎉 ULF Festival 2025: Goute Mond Lan, Ansanm Nou Fò! 🌍❤️🔥",
+    mainDescription: "Pare kò w pou yon selebrasyon istorik gou, ritm ak inite nan premye ULF Festival kote kilti rankontre nan pi bon fason posib! Sa se plis pase yon evènman; se yon mouvman. Yon kote nou pataje pen, rakonte istwa ak bati pon atravè manje, mizik ak verite.",
     
     // Haiti section
     haitiTitle: "🇭🇹 Selebre Kè ak Nanm Ayisyen an",
@@ -214,7 +214,7 @@ export const commonTranslations = {
     // Important Info
     importantInfo: {
       edition: "Premye Edisyon – Lanse an 2025!",
-      description: "Sa se sèlman kòmansman an. Harmony Fest ap retounen chak ane, pi gwo ak pi fò, men misyon an ap rete menm: inite atravè kilti.",
+      description: "Sa se sèlman kòmansman an. ULF Festival ap retounen chak ane, pi gwo ak pi fò, men misyon an ap rete menm: inite atravè kilti.",
       tickets: "Tikè yo ap vann vit!",
       hotels: "Òtèl yo rezève apa – Fè plan ou byen bonè!",
       closing: "Vini ak grangou. Ale plen—nan vant ou, nan kè w, ak nan nanm ou. Ann fè istwa ansanm. ❤️🔥"
@@ -223,9 +223,9 @@ export const commonTranslations = {
     // Footer
     footer: {
       title: "Vini ak Grangou, Ale Plen—Nan Tout Sans!",
-      description: "Kit ou se yon moun ki renmen manje, renmen mizik, oswa senpleman yon moun ki kwè nan bon enèji, Harmony Fest Entènasyonal la se kote ou ye pou fè fèt, danse, ak konekte. Ranje kè nou menm jan ak asyèt nou yo!",
+      description: "Kit ou se yon moun ki renmen manje, renmen mizik, oswa senpleman yon moun ki kwè nan bon enèji, ULF Festival Entènasyonal la se kote ou ye pou fè fèt, danse, ak konekte. Ranje kè nou menm jan ak asyèt nou yo!",
       whereWhen: "Ki Kote & Ki Lè:",
-      locationDate: "[Kote + Dat]",
+      locationDate: "Fort Liberte + 6- 7- 8.7.2025",
       tickets: "Braslè:",
       ticketLink: "[Lyen] (Premye moun yo jwenn avantaj adisyonèl!)",
       closing: "N a wè la—pare pou n manje, danse, ak gaye lanmou! ✨"
@@ -257,8 +257,8 @@ export const commonTranslations = {
   fr: {
     // Hero section
     heroTitle: "Culture culinaire d'excellence et cuisine internationale",
-    mainTitle: "🎉 Harmony Fest 2025 : Goûtez le Monde, Unissons-nous ! 🌍❤️🔥",
-    mainDescription: "Préparez-vous pour une célébration historique de saveurs, de rythmes et d'unité lors du tout premier Harmony Fest — un festival où les cultures se rencontrent de la plus belle des manières ! Plus qu'un simple événement ; c'est un mouvement. Un lieu où nous partageons le pain, échangeons des histoires et construisons des ponts à travers la nourriture, la musique et la vérité.",
+    mainTitle: "🎉 ULF Festival 2025 : Goûtez le Monde, Unissons-nous ! 🌍❤️🔥",
+    mainDescription: "Préparez-vous pour une célébration historique de saveurs, de rythmes et d'unité lors du tout premier ULF Festival — un festival où les cultures se rencontrent de la plus belle des manières ! Plus qu'un simple événement ; c'est un mouvement. Un lieu où nous partageons le pain, échangeons des histoires et construisons des ponts à travers la nourriture, la musique et la vérité.",
     
     // Haiti section
     haitiTitle: "🇭🇹 Célébrons l'Âme Haïtienne",
@@ -299,7 +299,7 @@ export const commonTranslations = {
     // Important Info
     importantInfo: {
       edition: "Première Édition – Lancement en 2025 !",
-      description: "Ce n'est que le début. Harmony Fest reviendra chaque année, plus grand et plus audacieux, mais la mission reste la même : l'unité à travers la culture.",
+      description: "Ce n'est que le début.   ULF Festival Fest reviendra chaque année, plus grand et plus audacieux, mais la mission reste la même : l'unité à travers la culture.",
       tickets: "Les billets partent vite !",
       hotels: "Hôtels à réserver séparément – Réservez tôt !",
       closing: "Venez affamés. Repartez rassasiés — dans votre ventre, votre cœur et votre âme. Écrivons l'histoire ensemble. ❤️🔥"
@@ -308,9 +308,9 @@ export const commonTranslations = {
     // Footer
     footer: {
       title: "Venez Affamés, Repartez Rassasiés — Dans Tous les Sens !",
-      description: "Que vous soyez gourmand, amateur de musique ou simplement quelqu'un qui croit aux bonnes ondes, International Harmony Fest est l'endroit idéal pour festoyer, danser et créer des liens. Remplissez nos cœurs autant que nos assiettes !",
+      description: "Que vous soyez gourmand, amateur de musique ou simplement quelqu'un qui croit aux bonnes ondes, International ULF Festival est l'endroit idéal pour festoyer, danser et créer des liens. Remplissez nos cœurs autant que nos assiettes !",
       whereWhen: "Où & Quand :",
-      locationDate: "[Lieu + Date]",
+      locationDate: "Fort Liberte + 6- 7- 8.7.2025",
       tickets: "Bracelets :",
       ticketLink: "[Lien] (Les premiers inscrits ont des avantages !)",
       closing: "Rendez-vous sur place — prêts à manger, danser et répandre l'amour ! ✨"

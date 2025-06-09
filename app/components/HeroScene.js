@@ -5,7 +5,7 @@ import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
 import { TextureLoader } from 'three';
 import { Suspense, useRef, useEffect, useState } from 'react';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { OrbitControls } from '@react-three/drei';
 import dynamic from 'next/dynamic';
 import SceneLoader from './SceneLoader';
 
@@ -18,89 +18,53 @@ const isIOS = () => {
 
 const CameraController = () => {
   const { camera, gl } = useThree();
-  const controls = useRef();
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+               (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  
+  return (
+    <OrbitControls
+      enableZoom={false}
+      enablePan={false}
+      enableDamping={true}
+      dampingFactor={0.05}
+      rotateSpeed={0.75}
+      screenSpacePanning={false}
+      // Touch controls
+      touches={{
+        ONE: THREE.TOUCH.ROTATE,
+        TWO: THREE.TOUCH.DOLLY_PAN
+      }}
+      // iOS specific settings
+      enabled={!isIOS}
+      // Infinite horizontal rotation
+      minPolarAngle={Math.PI / 2 - 0.2}
+      maxPolarAngle={Math.PI / 2 + 0.2}
+      // Smoothing
+      enableSmoothTime={true}
+      smoothTime={0.1}
+    />
+  );
+};
+
+// Helper component for iOS touch handling
+const IOSTouchHandler = () => {
+  const { gl } = useThree();
   
   useEffect(() => {
-    const orbitControls = new OrbitControls(camera, gl.domElement);
-    orbitControls.enableZoom = false;
-    orbitControls.enablePan = false;
-    orbitControls.enableDamping = true;
-    orbitControls.dampingFactor = 0.5; // Even more friction for slower movement
-    orbitControls.rotateSpeed = 0.15; // Much slower rotation speed
-    orbitControls.screenSpacePanning = false;
-    
-    // Check for iOS devices
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
-                (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    
-    // Disable all controls on iOS
-    if (isIOS) {
-      orbitControls.enableRotate = false;
-      orbitControls.enablePan = false;
-      orbitControls.enableZoom = false;
-      
-      // Make the canvas non-interactive on iOS
+    if (typeof window !== 'undefined' && 
+        (/iPad|iPhone|iPod/.test(navigator.userAgent) || 
+         (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1))) {
       gl.domElement.style.touchAction = 'auto';
-      gl.domElement.style.pointerEvents = 'none';
-      
-      // Add a wrapper to handle touch events on iOS
-      const wrapper = document.createElement('div');
-      wrapper.style.width = '100%';
-      wrapper.style.height = '100%';
-      wrapper.style.position = 'absolute';
-      wrapper.style.top = '0';
-      wrapper.style.left = '0';
-      wrapper.style.zIndex = '1';
-      gl.domElement.parentNode.insertBefore(wrapper, gl.domElement);
-      
-      // Prevent default touch behavior on the wrapper
-      wrapper.addEventListener('touchmove', (e) => {
-        e.stopPropagation();
-      }, { passive: false });
-      
-      // Clean up
-      return () => {
-        if (wrapper.parentNode) {
-          wrapper.parentNode.removeChild(wrapper);
-        }
-        orbitControls.dispose();
-      };
-    } else {
-      // Enable controls for non-iOS devices
-      orbitControls.mouseButtons = {
-        LEFT: 0,    // ROTATE
-        MIDDLE: 1,  // DOLLY
-        RIGHT: 2    // PAN
-      };
-      orbitControls.touchAction = 'pan-y';
+      gl.domElement.style.pointerEvents = 'auto';
     }
-    
-    // Remove azimuth constraints for infinite horizontal rotation
-    orbitControls.minPolarAngle = Math.PI / 2 - 0.2; // Keep slight vertical movement constraint
-    orbitControls.maxPolarAngle = Math.PI / 2 + 0.2;
-    // Removed min/maxAzimuthAngle for infinite horizontal rotation
-    orbitControls.dampingFactor = 0.05; // Increased damping for smoother infinite rotation
-    orbitControls.rotateSpeed = 0.8; // Slightly faster rotation for better feel
-    orbitControls.enableSmoothTime = true; // Enable smooth interpolation
-    orbitControls.smoothTime = 0.1; // Time to smooth to target
-    orbitControls.enableKeys = false; // Disable keyboard controls for smoother experience
-    
-    controls.current = orbitControls;
-    
-    // Auto-rotate
-    orbitControls.autoRotate = false;
-    orbitControls.autoRotateSpeed = 1;
     
     return () => {
-      orbitControls.dispose();
+      if (gl.domElement) {
+        gl.domElement.style.touchAction = '';
+        gl.domElement.style.pointerEvents = '';
+      }
     };
-  }, [camera, gl]);
-  
-  useFrame(() => {
-    if (controls.current) {
-      controls.current.update();
-    }
-  });
+  }, [gl.domElement]);
   
   return null;
 };
@@ -111,14 +75,25 @@ function Plane({ position, rotation, textureUrl, scale }) {
   // Check if the texture is a PNG (assuming from file extension)
   const isPNG = textureUrl.toLowerCase().endsWith('.png');
   
+  // Special handling for the first plane (poster2.png)
+  const isFirstPlane = textureUrl.includes('poster2.png');
+  
   return (
-    <mesh position={position} rotation={rotation} scale={scale}>
+    <mesh 
+      position={position} 
+      rotation={rotation} 
+      scale={scale}
+      renderOrder={isFirstPlane ? 1 : 0} // Ensure first plane renders first
+    >
       <planeGeometry args={[1, 1, 1, 1]} />
       <meshBasicMaterial 
         map={texture} 
         toneMapped={false}
         transparent={isPNG}
-        opacity={isPNG ? 1 : 1}
+        opacity={isFirstPlane ? 0.99 : (isPNG ? 1 : 1)}
+        depthTest={!isFirstPlane} // Disable depth test for first plane
+        depthWrite={!isFirstPlane} // Disable depth write for first plane
+        alphaTest={0.1} // Helps with transparency sorting
       />
     </mesh>
   );
@@ -166,23 +141,48 @@ function Scene() {
                 rotation={[0, 0, 0]} 
                 textureUrl="/images/palms.png" 
                 scale={[1.25, 1.3, 1]}
+                depthTest={true}
+                depthWrite={true}
               />
             </Suspense>
             <Suspense fallback={null}>
               {/* Perpendicular side plane */}
               <Plane 
-                position={[1.5, 0.05, 0]}
+                position={[1.7, 0.05, 0]}
                 rotation={[0, Math.PI/2 + Math.PI, 0]}
-                textureUrl="/images/poster2.png" 
-                scale={[1.25, 1.3, 1]}
+                textureUrl="/images/island1.png" 
+                scale={[4, 0.5, 1]}
+                depthTest={true}
+                depthWrite={true}
               />
+            </Suspense>
+            <Suspense fallback={null}>
+              {/* Perpendicular side plane */}
+              <Plane 
+                position={[1.1, -0.4, 0]}
+                rotation={[0, Math.PI/2 + Math.PI, 0]}
+                textureUrl="/images/waves.png" 
+                scale={[4, 0.5, 1]}
+                depthTest={true}
+                depthWrite={true}  
+                    />
             </Suspense>
             {/* Opposite side plane */}
             <Plane 
-              position={[-1.5, 0.05, 0]}
+              position={[-1.5, 0.1, 0]}
               rotation={[0, Math.PI/2, 0]}
               textureUrl="/images/palms.png" 
-              scale={[1.25, 1.3, 1]}
+              scale={[1.7, 1.3, 1]}
+              depthTest={true}
+              depthWrite={true}
+            />
+                        <Plane 
+              position={[-1.1, -0.6, 0]}
+              rotation={[0, Math.PI/2, 0]}
+              textureUrl="/images/waves.png" 
+              scale={[3.25, 0.4, 1]}
+              depthTest={true}
+              depthWrite={true}
             />
             {/* Plane behind camera */}
             <Plane 
@@ -190,6 +190,8 @@ function Scene() {
               rotation={[0, Math.PI, 0]} // Facing the opposite direction
               textureUrl="/images/poster3.jpg"
               scale={[2.45, 1.5, 1]}
+              depthTest={true}
+              depthWrite={true}
             />
           </group>
         </Suspense>
