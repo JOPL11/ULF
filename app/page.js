@@ -6,6 +6,7 @@ import styles from "./page.module.css";
 import footerStyles from "./footer.module.css";
 import dynamic from 'next/dynamic';
 import LanguageSwitcher from './components/LanguageSwitcher';
+import Sun from './components/Sun';
 import { useLanguage } from './context/LanguageContext';
 import { getTranslations } from './translations/common';
 
@@ -40,6 +41,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <LanguageSwitcher />
+      <Sun />
       <div className={styles.contentWrapper}>
         <div className={styles.pageContent}>
           <main className={styles.main}>

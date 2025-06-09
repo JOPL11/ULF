@@ -1,0 +1,48 @@
+/* Breathing animation */
+@keyframes sunBreath {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(3.8);
+  }
+}
+
+/* Mobile First Approach */
+.sunContainer {
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5);
+  width: 150vw;
+  height: 150vw;
+  min-width: 800px;
+  min-height: 800px;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.99;
+  overflow: visible;
+  animation: sunBreath 120s ease-in-out infinite;
+  will-change: transform; /* Optimize for animations */
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+  .sunContainer {
+    position: absolute;
+    top: 47%; /* Lowered by 7% from 40% */
+    transform: translate(-50%, -50%) scale(1.2);
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    aspect-ratio: 1/1;
+    min-width: auto;
+    min-height: auto;
+  }
+}
+
+.sunImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

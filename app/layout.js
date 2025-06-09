@@ -15,11 +15,12 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Union of Love Festival",
   description: "International Cuisine, Music & People Festival / Haiti 2025",
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({ children }) {

@@ -2,6 +2,8 @@
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
   --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+  --sun-color: #ff8c00;
+  --sun-glow: rgba(255, 140, 0, 0.1);
 
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
@@ -16,6 +18,14 @@
   background: #ffffff;
   position: relative;
   overflow-x: hidden;
+  z-index: 1;
+}
+
+
+/* Content wrapper above sun */
+.contentWrapper {
+  position: relative;
+  z-index: 1;
 }
 
 .contentWrapper {
@@ -43,6 +53,39 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
+}
+.importantInfo {
+  background-color: var(--gray-alpha-100);
+  border: 1px solid var(--gray-alpha-200);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.importantInfo p {
+  margin: 0.75rem 0;
+  line-height: 1.6;
+}
+
+.importantInfo p:first-child {
+  margin-top: 0;
+}
+
+.importantInfo p:last-child {
+  margin-bottom: 0;
+}
+
+.ctaBox {
+  background-color: rgba(255, 255, 255, 0); /* Semi-transparent white */
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Slightly transparent border */
+  backdrop-filter: blur(5px); /* Optional: adds a frosted glass effect */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -166,7 +209,6 @@ a.secondary {
   line-height: 1.05;
   color: #000;
   letter-spacing: 0.5px;
-  text-transform: uppercase;
   text-shadow: 0.5px 0 0 currentColor;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

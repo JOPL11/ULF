@@ -7,6 +7,7 @@ import { TextureLoader } from 'three';
 import { Suspense, useRef, useEffect, useState } from 'react';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import dynamic from 'next/dynamic';
+import SceneLoader from './SceneLoader';
 
 // Check if running on iOS (for specific behavior in CameraController)
 const isIOS = () => {
@@ -129,6 +130,7 @@ function Scene() {
       width: '100vw',
       height: '100%',
       position: 'relative',
+      top: '0',  // Adjust this value to move the container up or down
       left: '50%',
       transform: 'translateX(-50%)',
       backgroundColor: '#ffffff'
@@ -146,29 +148,35 @@ function Scene() {
         <CameraController />
         <ambientLight intensity={1} />
         <pointLight position={[5, 5, 5]} intensity={1.5} />
-        <Suspense fallback={null}>
+        <Suspense fallback={<SceneLoader />}>
           <group position={[0, 0, 0]}>
-            {/* Back plane */}
-            <Plane 
-              position={[0, 0, -0.5]} 
-              rotation={[0, 0, 0]} 
-              textureUrl="/images/poster2.png" 
-              scale={[1.45, 1.5, 1]}
-            />
-            {/* Front plane */}
-            <Plane 
-              position={[-0.15, 0.05, -1.5]} 
-              rotation={[0, 0, 0]} 
-              textureUrl="/images/palms.png" 
-              scale={[1.25, 1.3, 1]}
-            />
-            {/* Perpendicular side plane */}
-            <Plane 
-              position={[1.5, 0.05, 0]}
-              rotation={[0, Math.PI/2 + Math.PI, 0]}
-              textureUrl="/images/poster2.png" 
-              scale={[1.25, 1.3, 1]}
-            />
+            <Suspense fallback={null}>
+              {/* Back plane */}
+              <Plane 
+                position={[0, 0, -0.5]} 
+                rotation={[0, 0, 0]} 
+                textureUrl="/images/poster2.png" 
+                scale={[1.45, 1.5, 1]}
+              />
+            </Suspense>
+            <Suspense fallback={null}>
+              {/* Front plane */}
+              <Plane 
+                position={[-0.15, 0.05, -1.5]} 
+                rotation={[0, 0, 0]} 
+                textureUrl="/images/palms.png" 
+                scale={[1.25, 1.3, 1]}
+              />
+            </Suspense>
+            <Suspense fallback={null}>
+              {/* Perpendicular side plane */}
+              <Plane 
+                position={[1.5, 0.05, 0]}
+                rotation={[0, Math.PI/2 + Math.PI, 0]}
+                textureUrl="/images/poster2.png" 
+                scale={[1.25, 1.3, 1]}
+              />
+            </Suspense>
             {/* Opposite side plane */}
             <Plane 
               position={[-1.5, 0.05, 0]}

@@ -1,7 +1,7 @@
 export const commonTranslations = {
   en: {
     // Hero section
-    heroTitle: "AWESOME QUALITY FOOD CULTURE & INTERNATIONAL CUISINE",
+    heroTitle: "Awesome quality food culture & international cuisine",
     mainTitle: "🎉 Harmony Fest 2025: Taste the World, Unite as One! 🌍❤️🔥",
     mainDescription: "Get ready for a historic celebration of flavor, rhythm, and unity at the first-ever Harmony Fest—a festival where cultures collide in the best way possible! This is more than just an event; it's a movement. A place where we break bread, share stories, and build bridges through food, music, and truth.",
     
@@ -86,7 +86,7 @@ export const commonTranslations = {
   
   es: {
     // Hero section
-    heroTitle: "CULTURA GASTRONÓMICA DE ALTA CALIDAD Y COCINA INTERNACIONAL",
+    heroTitle: "Cultura gastronómica de alta calidad y cocina internacional",
     mainTitle: "🎉 Harmony Fest 2025: ¡Prueba el Mundo, Únete como Uno! 🌍❤️🔥",
     mainDescription: "Prepárate para una celebración histórica de sabor, ritmo y unidad en el primer Harmony Fest, ¡un festival donde las culturas chocan de la mejor manera posible! Esto es más que un simple evento; es un movimiento. Un lugar donde partimos el pan, compartimos historias y construimos puentes a través de la comida, la música y la verdad.",
     
@@ -171,7 +171,7 @@ export const commonTranslations = {
   
   ht: {
     // Hero section
-    heroTitle: "BON KALITE MANJE KILTI AK KWIZIN ENTERNASYONAL",
+    heroTitle: "Bon kalite manje kilti ak kwizin enternasyonal",
     mainTitle: "🎉 Harmony Fest 2025: Goute Mond Lan, Ansanm Nou Fò! 🌍❤️🔥",
     mainDescription: "Pare kò w pou yon selebrasyon istorik gou, ritm ak inite nan premye Harmony Fest la—yon festival kote kilti rankontre nan pi bon fason posib! Sa se plis pase yon evènman; se yon mouvman. Yon kote nou pataje pen, rakonte istwa ak bati pon atravè manje, mizik ak verite.",
     
@@ -256,7 +256,7 @@ export const commonTranslations = {
   
   fr: {
     // Hero section
-    heroTitle: "CULTURE CULINAIRE D'EXCELLENCE ET CUISINE INTERNATIONALE",
+    heroTitle: "Culture culinaire d'excellence et cuisine internationale",
     mainTitle: "🎉 Harmony Fest 2025 : Goûtez le Monde, Unissons-nous ! 🌍❤️🔥",
     mainDescription: "Préparez-vous pour une célébration historique de saveurs, de rythmes et d'unité lors du tout premier Harmony Fest — un festival où les cultures se rencontrent de la plus belle des manières ! Plus qu'un simple événement ; c'est un mouvement. Un lieu où nous partageons le pain, échangeons des histoires et construisons des ponts à travers la nourriture, la musique et la vérité.",
     
