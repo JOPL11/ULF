@@ -20,7 +20,7 @@
   min-height: 800px;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.99;
+  opacity:1;
   overflow: visible;
   animation: sunBreath 120s ease-in-out infinite;
   will-change: transform; /* Optimize for animations */

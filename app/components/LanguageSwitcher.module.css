@@ -1,26 +1,40 @@
 .languageSwitcher {
   position: absolute;
-  top: 50px;
+  top: 15px;
   left: 0;
   right: 0;
   z-index: 1000;
   display: flex;
-  justify-content: center;
-  gap: 24px;
-  padding: 8px;
+  justify-content: space-between;
+  width: 175px;
+  margin: 0 auto;
+  padding: 8px 0;
 }
 
 .flagButton {
   background: none;
-  border: none;
-  font-size: 24px;
+  border: 2px solid transparent;
+  border-radius: 4px;
   cursor: pointer;
   padding: 0;
-  margin: 0;
+  margin: 0 2px;
   line-height: 1;
-  transition: transform 0.2s;
+  transition: all 0.2s ease;
   opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 21px;
+  overflow: hidden;
+  aspect-ratio: 3/2;
+}
+
+.flagButton svg {
   display: block;
+  width: 24px;
+  height: 12px;
+  flex-shrink: 0;
 }
 
 .flagButton:hover {

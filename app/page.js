@@ -281,9 +281,11 @@ export default function Home() {
                 </div>
               </div>
               <div className={footerStyles.footerBottom}>
-                <p>&copy; {new Date().getFullYear()} {language === 'es' ? 'Union of Love Festival' : 'Union of Love Festival'}. 
+                <p>&copy; {new Date().getFullYear()} {language === 'es' ? 'Jan Peiro' : 'Jan Peiro'}. 
                 {language === 'es' ? ' Todos los derechos reservados.' : ' All rights reserved.'}</p>
-                <p>{language === 'es' ? 'Hecho con ❤️ y 🎶 por el Equipo de ULF' : 'Made with ❤️ and 🎶 by the ULF Team'}</p>
+                <p>{language === 'es' ? 'Hecho con ❤️ y 🎶 por ' : 'Made with ❤️ and 🎶 by '}
+                  <a href="mailto:jan.peiro@protonmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>Jan Peiro</a>
+                </p>
               </div>
             </footer>
           </main>

@@ -216,7 +216,7 @@ function Scene() {
               position={[0, 0, 1.5]} // Positioned behind the camera
               rotation={[0, Math.PI, 0]} // Facing the opposite direction
               textureUrl="/images/poster3.jpg"
-              scale={[2.45, 2, 1]}
+              scale={[2.45, 1.5, 1]}
               depthTest={true}
               depthWrite={true}
             />
