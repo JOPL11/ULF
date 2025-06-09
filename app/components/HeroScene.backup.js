@@ -20,25 +20,51 @@ const isIOS = () => {
 // iOS Tap Overlay Component
 const IOSTapOverlay = ({ onStart }) => {
   const [visible, setVisible] = useState(false);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     // Only show on iOS devices
     if (isIOS()) {
       setVisible(true);
+      // Create a dummy audio context to unlock Web Audio API
+      const unlock = () => {
+        const context = new (window.AudioContext || window.webkitAudioContext)();
+        if (context.state === 'suspended') {
+          context.resume();
+        }
+        document.removeEventListener('click', unlock);
+        document.removeEventListener('touchstart', unlock);
+      };
+
+      document.addEventListener('click', unlock, { once: true });
+      document.addEventListener('touchstart', unlock, { once: true });
     }
   }, []);
+
+  const handleStart = () => {
+    // Force a small delay to ensure the tap is registered
+    setTimeout(() => {
+      setVisible(false);
+      onStart();
+    }, 100);
+  };
 
   if (!visible) return null;
 
   return (
-    <div className={styles.iosOverlay} onClick={() => {
-      setVisible(false);
-      onStart();
-    }}>
+    <div className={styles.iosOverlay} onClick={handleStart}>
       <div className={styles.iosOverlayContent}>
         <h3>Welcome</h3>
-        <p>Tap anywhere to start the 3D experience</p>
-        <button className={styles.iosButton}>Tap to Begin</button>
+        <p>Tap to enable 3D experience</p>
+        <button 
+          className={styles.iosButton}
+          onClick={(e) => {
+            e.stopPropagation();
+            handleStart();
+          }}
+        >
+          Tap to Begin
+        </button>
       </div>
     </div>
   );
@@ -62,6 +88,8 @@ const CameraController = () => {
         ONE: THREE.TOUCH.ROTATE,
         TWO: THREE.TOUCH.DOLLY_PAN
       }}
+      // iOS specific settings
+      enabled={!isIOS}
       // Infinite horizontal rotation
       minPolarAngle={Math.PI / 2 - 0.2}
       maxPolarAngle={Math.PI / 2 + 0.2}
@@ -127,24 +155,43 @@ function Plane({ position, rotation, textureUrl, scale }) {
 
 function Scene() {
   return (
-    <div style={{ 
-      width: '100vw',
+    <div style={{
+      width: '100%',
       height: '100%',
       position: 'relative',
-      top: '0',  // Adjust this value to move the container up or down
-      left: '50%',
-      transform: 'translateX(-50%)',
-      backgroundColor: '#ffffff'
+      overflow: 'hidden'
     }}>
       <Canvas
-        gl={{ antialias: true }}
+        gl={{
+          antialias: true,
+          powerPreference: 'high-performance',
+          alpha: true,
+          stencil: false,
+          depth: true
+        }}
         style={{ 
           width: '100%',
           height: '100%',
-          background: '#ffffff',
-          touchAction: 'none'
+          touchAction: 'none',
+          WebkitTouchCallout: 'none',
+          WebkitUserSelect: 'none',
+          userSelect: 'none',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          zIndex: 1
         }}
-        camera={{ position: [0, 0, 1.2], fov: 70 }} // Moved even closer and increased FOV more
+        camera={{ position: [0, 0, 1.2], fov: 70 }}
+        onCreated={({ gl }) => {
+          if (isIOS()) {
+            gl.forceContextRestore();
+            gl.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+          }
+        }}
+        onPointerMissed={() => {}}
+        eventSource={typeof document !== 'undefined' ? document : undefined}
+        eventPrefix="web"
+        dpr={[1, 2]}
       >
         <CameraController />
         <ambientLight intensity={1} />
@@ -152,7 +199,6 @@ function Scene() {
         <Suspense fallback={<SceneLoader />}>
           <group position={[0, 0, 0]}>
             <Suspense fallback={null}>
-              {/* Back plane */}
               <Plane 
                 position={[0, 0, -0.5]} 
                 rotation={[0, 0, 0]} 
@@ -161,7 +207,6 @@ function Scene() {
               />
             </Suspense>
             <Suspense fallback={null}>
-              {/* Front plane */}
               <Plane 
                 position={[-0.15, 0.05, -1.5]} 
                 rotation={[0, 0, 0]} 
@@ -172,7 +217,6 @@ function Scene() {
               />
             </Suspense>
             <Suspense fallback={null}>
-              {/* Perpendicular side plane */}
               <Plane 
                 position={[1.7, 0.05, 0]}
                 rotation={[0, Math.PI/2 + Math.PI, 0]}
@@ -183,17 +227,15 @@ function Scene() {
               />
             </Suspense>
             <Suspense fallback={null}>
-              {/* Perpendicular side plane */}
               <Plane 
                 position={[1.1, -0.4, 0]}
                 rotation={[0, Math.PI/2 + Math.PI, 0]}
                 textureUrl="/images/waves.png" 
                 scale={[4, 0.5, 1]}
                 depthTest={true}
-                depthWrite={true}  
-                    />
+                depthWrite={true}
+              />
             </Suspense>
-            {/* Opposite side plane */}
             <Plane 
               position={[-1.5, 0.1, 0]}
               rotation={[0, Math.PI/2, 0]}
@@ -202,7 +244,7 @@ function Scene() {
               depthTest={true}
               depthWrite={true}
             />
-                        <Plane 
+            <Plane 
               position={[-1.1, -0.6, 0]}
               rotation={[0, Math.PI/2, 0]}
               textureUrl="/images/waves.png" 
@@ -210,10 +252,9 @@ function Scene() {
               depthTest={true}
               depthWrite={true}
             />
-            {/* Plane behind camera */}
             <Plane 
-              position={[0, 0, 1.5]} // Positioned behind the camera
-              rotation={[0, Math.PI, 0]} // Facing the opposite direction
+              position={[0, 0, 1.5]}
+              rotation={[0, Math.PI, 0]}
               textureUrl="/images/poster3.jpg"
               scale={[2.45, 1.5, 1]}
               depthTest={true}
@@ -234,6 +275,7 @@ export default function HeroScene() {
   const [isClient, setIsClient] = useState(false);
   const [iosReady, setIosReady] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
+  const containerRef = useRef(null);
   
   useEffect(() => {
     // Set client-side flag
@@ -248,8 +290,16 @@ export default function HeroScene() {
   }, []);
 
   const handleStart = () => {
-    setIosReady(true);
-    setShowOverlay(false);
+    // Force a small delay to ensure the tap is registered
+    setTimeout(() => {
+      setIosReady(true);
+      setShowOverlay(false);
+      
+      // Force a resize event to ensure proper rendering
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new Event('resize'));
+      }
+    }, 100);
   };
 
   // Show loading state during initial render to avoid hydration mismatch
@@ -258,9 +308,31 @@ export default function HeroScene() {
   }
 
   return (
-    <>
-      {iosReady && <ThreeDScene />}
+    <div 
+      ref={containerRef} 
+      style={{ 
+        position: 'relative', 
+        width: '100%', 
+        height: '100%',
+        backgroundColor: '#ffffff'
+      }}
+    >
+      {iosReady && (
+        <Suspense fallback={
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#ffffff',
+          <ThreeDScene />
+        </Suspense>
+      )}
       {showOverlay && <IOSTapOverlay onStart={handleStart} />}
-    </>
+    </div>
   );
 }
