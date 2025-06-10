@@ -101,6 +101,21 @@ export default function Home() {
                   <p className={styles.closingText}>{t.importantInfo.closing}</p>
                 </div>
                 
+                <div style={{ margin: '40px 0', textAlign: 'center' }}>
+                  <Image 
+                    src="/images/map.png" 
+                    alt={language === 'es' ? 'Celebrando la unidad global' : 'Celebrating global unity'} 
+                    width={380} 
+                    height={220}
+                    style={{
+                      maxWidth: '100%',
+                      height: 'auto',
+                      borderRadius: '8px',
+                      boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
+                    }}
+                    priority
+                  />
+                </div>
                 <p>
                   <strong>
                     <svg width="24" height="16" viewBox="0 0 24 16" style={{
