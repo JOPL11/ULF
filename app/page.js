@@ -282,12 +282,12 @@ export default function Home() {
               </div>
               <div className={footerStyles.footerBottom}>
                 <p>&copy; {new Date().getFullYear()} {language === 'es' ? (
-                  <a href="https://streetlamp-rouge.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>Jan Peiro</a>
+                  <a href="https://streetlamp-rouge.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Jan Peiro</a>
                 ) : (
-                  <a href="https://streetlamp-rouge.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>Jan Peiro</a>
+                  <a href="https://streetlamp-rouge.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Jan Peiro</a>
                 )}. {language === 'es' ? ' Todos los derechos reservados.' : ' All rights reserved.'}</p>
                 <p>{language === 'es' ? 'Hecho con ❤️ y 🎶 por ' : 'Made with ❤️ and 🎶 by '}
-                  <a href="mailto:jan.peiro@protonmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>Jan Peiro</a>
+                  <a href="mailto:jan.peiro@protonmail.com" style={{ color: 'inherit', textDecoration: 'underline' }}>Jan Peiro</a>
                 </p>
               </div>
             </footer>

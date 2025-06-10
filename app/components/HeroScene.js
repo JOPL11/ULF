@@ -20,6 +20,7 @@ const isIOS = () => {
 // iOS Tap Overlay Component
 const IOSTapOverlay = ({ onStart }) => {
   const [visible, setVisible] = useState(false);
+  const [animationComplete, setAnimationComplete] = useState(false);
 
   useEffect(() => {
     // Only show on iOS devices
@@ -46,11 +47,37 @@ const IOSTapOverlay = ({ onStart }) => {
 
 const CameraController = () => {
   const { camera, gl } = useThree();
+  const controlsRef = useRef();
+  const animationProgress = useRef(0);
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
                (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const [animationComplete, setAnimationComplete] = useState(false);
+  
+  useFrame((state, delta) => {
+    if (!animationComplete && controlsRef.current) {
+      // Animate a 360-degree rotation over 5 seconds
+      if (animationProgress.current < 1) {
+        animationProgress.current += delta / 5; // 5 seconds for full rotation
+        // Ease in-out function for smooth start and end
+        const progress = 0.5 - Math.cos(animationProgress.current * Math.PI) / 2;
+        // Rotate around the Y axis (horizontal rotation)
+        controlsRef.current.setAzimuthalAngle(progress * Math.PI * 2);
+      } else if (!animationComplete) {
+        // Reset to initial position after animation
+        controlsRef.current.setAzimuthalAngle(0);
+        setAnimationComplete(true);
+      }
+    }
+    
+    // Update controls
+    if (controlsRef.current) {
+      controlsRef.current.update();
+    }
+  });
   
   return (
     <OrbitControls
+      ref={controlsRef}
       enableZoom={false}
       enablePan={false}
       enableDamping={true}
@@ -68,6 +95,8 @@ const CameraController = () => {
       // Smoothing
       enableSmoothTime={true}
       smoothTime={0.1}
+      // Initial target
+      target={[0, 0, 0]}
     />
   );
 };
