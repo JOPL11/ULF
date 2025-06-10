@@ -1,5 +1,6 @@
 "use client";
 
+import React from 'react';
 import { Canvas, useThree, useFrame } from '@react-three/fiber';
 import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
@@ -125,12 +126,27 @@ const IOSTouchHandler = () => {
 };
 
 function Plane({ position, rotation, textureUrl, scale }) {
-  const texture = useLoader(TextureLoader, textureUrl);
+  const texture = useLoader(TextureLoader, textureUrl, (loader) => {
+    loader.setCrossOrigin('anonymous');
+  });
   
-  // Check if the texture is a PNG (assuming from file extension)
+  // Configure texture settings for better quality
+  React.useEffect(() => {
+    if (texture) {
+      // Use high quality filtering
+      texture.minFilter = THREE.LinearMipmapLinearFilter;
+      texture.magFilter = THREE.LinearFilter;
+      texture.anisotropy = 8; // Higher value for better quality at oblique angles
+      texture.generateMipmaps = true;
+      texture.encoding = THREE.sRGBEncoding;
+      texture.premultiplyAlpha = true;
+      texture.unpackAlignment = 1; // Ensures proper alignment for non-power-of-2 textures
+      texture.needsUpdate = true;
+    }
+  }, [texture]);
+  
   const isPNG = textureUrl.toLowerCase().endsWith('.png');
-  
-  // Special handling for the first plane (poster2.png)
+  const isWaves = textureUrl.includes('waves.png');
   const isFirstPlane = textureUrl.includes('poster2.png');
   
   return (
@@ -138,17 +154,21 @@ function Plane({ position, rotation, textureUrl, scale }) {
       position={position} 
       rotation={rotation} 
       scale={scale}
-      renderOrder={isFirstPlane ? 1 : 0} // Ensure first plane renders first
+      renderOrder={isFirstPlane ? 1 : 0}
     >
       <planeGeometry args={[1, 1, 1, 1]} />
       <meshBasicMaterial 
-        map={texture} 
+        map={texture}
         toneMapped={false}
         transparent={isPNG}
         opacity={isFirstPlane ? 0.99 : (isPNG ? 1 : 1)}
-        depthTest={!isFirstPlane} // Disable depth test for first plane
-        depthWrite={!isFirstPlane} // Disable depth write for first plane
-        alphaTest={0.1} // Helps with transparency sorting
+        depthTest={!isFirstPlane}
+        depthWrite={!isFirstPlane}
+        alphaTest={isWaves ? 0.3 : 0.1} // Slightly higher threshold for waves
+        wireframe={false}
+        polygonOffset={true}
+        polygonOffsetFactor={1}
+        polygonOffsetUnits={1}
       />
     </mesh>
   );
