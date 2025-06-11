@@ -246,9 +246,9 @@ function Scene() {
               />
               </group>
             </Suspense> */}
-            {/*   <Suspense fallback={null}>
+            <Suspense fallback={null}>
               <group rotation={[0, 0, -Math.PI/2 ]} position={[0, -0.9, 3]} >
-            beach plane 
+              {/* beach plane */}
               <Plane 
                 position={[-0.10, 0.77, -2.6]} 
                 rotation={[0, Math.PI/2 - Math.PI, 0]} 
@@ -258,9 +258,9 @@ function Scene() {
                 depthTest={true}
                 depthWrite={true}
               />
-              </group>
+             </group>
             </Suspense>
-            <Suspense fallback={null}>*/}
+            <Suspense fallback={null}>
               {/* Perpendicular side plane */}
               <Plane 
                 position={[1.7, 0.05, 0]}
