@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Exo_2 } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "./context/LanguageContext";
 import { Pattaya } from "next/font/google";
@@ -10,14 +10,10 @@ const pattaya = Pattaya({
   display: 'swap',
 });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const exo2 = Exo_2({
+  subsets: ['latin'],
+  variable: '--font-exo2',
+  display: 'swap',
 });
 
 export const metadata = {
@@ -33,7 +29,7 @@ export const viewport = {
 
 export default function RootLayout({ children, params }) {
   return (
-    <html lang={params.lang || 'en'} className={`${geistSans.variable} ${geistMono.variable} ${pattaya.variable}`}>
+    <html lang={params.lang || 'en'} className={`${exo2.variable} ${pattaya.variable}`}>
       <body suppressHydrationWarning={true}>
         <LanguageProvider>
           {children}
