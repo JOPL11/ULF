@@ -148,6 +148,17 @@ function Plane({ position, rotation, textureUrl, scale }) {
   const isPNG = textureUrl.toLowerCase().endsWith('.png');
   const isWaves = textureUrl.includes('waves.png');
   const isFirstPlane = textureUrl.includes('poster2.png');
+
+  useEffect(() => {
+    if (texture) {
+      texture.minFilter = THREE.LinearFilter;
+      texture.magFilter = THREE.LinearFilter;
+      texture.anisotropy = 8;
+      texture.encoding = THREE.sRGBEncoding;
+      texture.premultiplyAlpha = true;
+      texture.needsUpdate = true;
+    }
+  }, [texture]);
   
   return (
     <mesh 
@@ -222,6 +233,20 @@ function Scene() {
               />
             </Suspense>
             <Suspense fallback={null}>
+              <group rotation={[0, 0, -Math.PI/2 ]} position={[0, -0.9, 3]} >
+              {/* beach plane */}
+              <Plane 
+                position={[-0.16, -0.05, -2.6]} 
+                rotation={[0, Math.PI/2 - Math.PI, 0]} 
+                textureUrl="/images/beach.png" 
+                scale={[3.25, 0.65, 1]}
+                side={THREE.DoubleSide}
+                depthTest={true}
+                depthWrite={true}
+              />
+              </group>
+            </Suspense>
+            <Suspense fallback={null}>
               {/* Perpendicular side plane */}
               <Plane 
                 position={[1.7, 0.05, 0]}
@@ -238,34 +263,42 @@ function Scene() {
                 position={[1.1, -0.4, 0]}
                 rotation={[0, Math.PI/2 + Math.PI, 0]}
                 textureUrl="/images/waves.png" 
-                scale={[4, 0.5, 1]}
+                scale={[2.9, 0.3, 1]}
                 depthTest={true}
                 depthWrite={true}  
                     />
             </Suspense>
             {/* Opposite side plane */}
             <Plane 
-              position={[-1.5, 0.1, 0]}
+              position={[-1.8, -0.2, 0]}
               rotation={[0, Math.PI/2, 0]}
-              textureUrl="/images/palms.png" 
-              scale={[1.7, 1.3, 1]}
+              textureUrl="/images/waves.png" 
+              scale={[2.5, 0.3, 1]}
               depthTest={true}
               depthWrite={true}
             />
-                        <Plane 
-              position={[-1.1, -0.6, 0]}
+            <Plane 
+              position={[-1.1, -0.5, 0]}
               rotation={[0, Math.PI/2, 0]}
               textureUrl="/images/waves.png" 
               scale={[3.25, 0.4, 1]}
               depthTest={true}
               depthWrite={true}
             />
+            <Plane 
+              position={[-4.1, 0.2, 0]}
+              rotation={[0, Math.PI/2, 0]}
+              textureUrl="/images/waves.png" 
+              scale={[4.25, 0.4, 7]}
+              depthTest={true}
+              depthWrite={true}
+            />
             {/* Plane behind camera */}
             <Plane 
-              position={[0, 0, 1.5]} // Positioned behind the camera
+              position={[0, 0.4, 1.7]} // Positioned behind the camera
               rotation={[0, Math.PI, 0]} // Facing the opposite direction
               textureUrl="/images/poster3.jpg"
-              scale={[2.45, 1.5, 1]}
+              scale={[1.8, 1.7, 1]}
               depthTest={true}
               depthWrite={true}
             />
