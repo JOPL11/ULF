@@ -57,7 +57,7 @@ export const commonTranslations = {
       whereWhen: "Where & When:",
       locationDate: "Fort Liberte + 6- 7- 8.7.2025",
       tickets: "Bracelets:",
-      ticketLink: "[Link] (Early birds get extra treats!)",
+      ticketLink: "(Early birds get extra treats!)",
       closing: "See you there—ready to eat, dance, and spread the love! ✨"
     },
     
@@ -142,7 +142,7 @@ export const commonTranslations = {
       whereWhen: "¿Dónde y Cuándo?",
       locationDate: "Fort Liberte + 6- 7- 8.7.2025",
       tickets: "Pulseras:",
-      ticketLink: "[Enlace] (¡Los primeros en comprar obtienen beneficios adicionales!)",
+      ticketLink: "(¡Los primeros en comprar obtienen beneficios adicionales!)",
       closing: "¡Nos vemos allí—listos para comer, bailar y esparcir amor! ✨"
     },
     
@@ -227,7 +227,7 @@ export const commonTranslations = {
       whereWhen: "Ki Kote & Ki Lè:",
       locationDate: "Fort Liberte + 6- 7- 8.7.2025",
       tickets: "Braslè:",
-      ticketLink: "[Lyen] (Premye moun yo jwenn avantaj adisyonèl!)",
+      ticketLink: "(Premye moun yo jwenn avantaj adisyonèl!)",
       closing: "N a wè la—pare pou n manje, danse, ak gaye lanmou! ✨"
     },
     
@@ -312,7 +312,7 @@ export const commonTranslations = {
       whereWhen: "Où & Quand :",
       locationDate: "Fort Liberte + 6- 7- 8.7.2025",
       tickets: "Bracelets :",
-      ticketLink: "[Lien] (Les premiers inscrits ont des avantages !)",
+      ticketLink: "(Les premiers inscrits ont des avantages !)",
       closing: "Rendez-vous sur place — prêts à manger, danser et répandre l'amour ! ✨"
     },
     

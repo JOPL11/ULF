@@ -154,7 +154,7 @@ function Plane({ position, rotation, textureUrl, scale }) {
       texture.minFilter = THREE.LinearFilter;
       texture.magFilter = THREE.LinearFilter;
       texture.anisotropy = 8;
-      texture.encoding = THREE.sRGBEncoding;
+      texture.colorSpace = THREE.SRGBColorSpace;
       texture.premultiplyAlpha = true;
       texture.needsUpdate = true;
     }
@@ -227,7 +227,7 @@ function Scene() {
                 position={[-0.15, 0.05, -1.5]} 
                 rotation={[0, 0, 0]} 
                 textureUrl="/images/palms.png" 
-                scale={[1.25, 1.3, 1]}
+                scale={[1.75, 1.55, 1]}
                 depthTest={true}
                 depthWrite={true}
               />
@@ -236,10 +236,24 @@ function Scene() {
               <group rotation={[0, 0, -Math.PI/2 ]} position={[0, -0.9, 3]} >
               {/* beach plane */}
               <Plane 
-                position={[-0.16, -0.05, -2.6]} 
+                position={[-0.10, -0.77, -2.6]} 
                 rotation={[0, Math.PI/2 - Math.PI, 0]} 
                 textureUrl="/images/beach.png" 
-                scale={[3.25, 0.65, 1]}
+                scale={[3.05, 0.65, 1]}
+                side={THREE.DoubleSide}
+                depthTest={true}
+                depthWrite={true}
+              />
+              </group>
+            </Suspense>
+            <Suspense fallback={null}>
+              <group rotation={[0, 0, -Math.PI/2 ]} position={[0, -0.9, 3]} >
+              {/* beach plane */}
+              <Plane 
+                position={[-0.10, 0.77, -2.6]} 
+                rotation={[0, Math.PI/2 - Math.PI, 0]} 
+                textureUrl="/images/beach.png" 
+                scale={[3.05, 0.65, 1]}
                 side={THREE.DoubleSide}
                 depthTest={true}
                 depthWrite={true}
@@ -295,7 +309,7 @@ function Scene() {
             />
             {/* Plane behind camera */}
             <Plane 
-              position={[0, 0.4, 1.7]} // Positioned behind the camera
+              position={[0, 0.4, 1.9]} // Positioned behind the camera
               rotation={[0, Math.PI, 0]} // Facing the opposite direction
               textureUrl="/images/poster3.jpg"
               scale={[1.8, 1.7, 1]}
