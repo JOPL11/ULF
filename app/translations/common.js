@@ -176,7 +176,7 @@ export const commonTranslations = {
     mainDescription: "Pare kò w pou yon selebrasyon istorik gou, ritm ak inite nan premye ULF Festival kote kilti rankontre nan pi bon fason posib! Sa se plis pase yon evènman; se yon mouvman. Yon kote nou pataje pen, rakonte istwa ak bati pon atravè manje, mizik ak verite.",
     
     // Haiti section
-    haitiTitle: "🇭🇹 Selebre Kè ak Nanm Ayisyen an",
+    haitiTitle: "Selebre Kè ak Nanm Ayisyen an",
     haitiDescription: "Kilti vibrant Ayiti a pran gwo plas ak griyo pike, diri djon djon ki gen bon gou, ak bannann peze dous ak krakas—tout fèt ak lanmou ak detèminasyon ki defini lespri ayisyen an. Kite ritm konpa, rara, ak jazz vodou fè w danse pandan n ap onore rich istwa Ayiti ak jwa ki pa janm febli l.",
     
     // Culinary section
