@@ -1,7 +1,8 @@
-import { Exo_2 } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "./context/LanguageContext";
 import { Pattaya } from "next/font/google";
+import CookieBanner from "./components/CookieBanner";
 
 const pattaya = Pattaya({
   weight: '400',
@@ -10,10 +11,11 @@ const pattaya = Pattaya({
   display: 'swap',
 });
 
-const exo2 = Exo_2({
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-exo2',
+  variable: '--font-inter',
   display: 'swap',
+  weight: ['400', '500', '600', '700'],
 });
 
 export const metadata = {
@@ -29,10 +31,11 @@ export const viewport = {
 
 export default function RootLayout({ children, params }) {
   return (
-    <html lang={params.lang || 'en'} className={`${exo2.variable} ${pattaya.variable}`}>
+    <html lang={params.lang || 'en'} className={`${inter.variable} ${pattaya.variable}`}>
       <body suppressHydrationWarning={true}>
         <LanguageProvider>
           {children}
+          <CookieBanner />
         </LanguageProvider>
       </body>
     </html>

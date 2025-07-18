@@ -214,6 +214,82 @@ a.secondary {
   height: 100% !important;
 }
 
+/* Cookie Consent Banner */
+.cookieConsent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 15px 20px;
+  z-index: 1000;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cookieContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.cookieContent p {
+  margin: 0;
+  flex: 1;
+  min-width: 250px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.cookieLink {
+  color: #00aeef;
+  text-decoration: underline;
+  margin: 0 4px;
+}
+
+.cookieLink:hover {
+  text-decoration: none;
+}
+
+.cookieButtons {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.cookieButton {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.cookieButtonPrimary {
+  background-color: #00aeef;
+  color: white;
+}
+
+.cookieButtonPrimary:hover {
+  background-color: #0089bb;
+}
+
+.cookieButtonSecondary {
+  background-color: transparent;
+  border: 1px solid #666;
+  color: white;
+}
+
+.cookieButtonSecondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .imageContainer {
   margin: 40px auto;
   max-width: 100%;
