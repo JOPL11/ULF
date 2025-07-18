@@ -1,5 +1,5 @@
 :root {
-  --background: #ffffff;
+  --background: #00aeef;
   --foreground: #000000;
 
   --card: #ffffff;
@@ -40,7 +40,7 @@ html, body {
 }
 
 body {
-  background-color: #ffffff !important;
+  background-color: #00aeef !important;
   color: var(--foreground);
   font-family: var(--font-exo2), Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -55,7 +55,7 @@ body {
 /* Ensure no dark mode overrides */
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #ffffff !important;
+    background-color: #00aeef !important;
   }
 }
 

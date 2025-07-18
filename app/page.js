@@ -296,7 +296,7 @@ export default function Home() {
                 </div>
               </div>
               <div className={footerStyles.footerBottom}>
-                <p>&copy; {new Date().getFullYear()} Union of Love. {language === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}</p>
+                <p>&copy; {new Date().getFullYear()} Jan Peiro. {language === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}</p>
                 <p>{language === 'es' ? 'Hecho con ❤️ y 🎶' : 'Made with ❤️ and 🎶'}</p>
               </div>
             </footer>

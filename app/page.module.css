@@ -15,7 +15,7 @@
   margin: 0;
   width: 100%;
   font-family: var(--font-geist-sans);
-  background: #ffffff;
+  background: linear-gradient(180deg, #00aeef 0%, #0089bb 50%, #014f9c 100%);
   position: relative;
   overflow-x: hidden;
   z-index: 1;
@@ -23,6 +23,7 @@
 
 .headline {
   font-family: var(--font-pattaya), serif;
+  color: #f2f2f2;
 }
 
 
@@ -61,18 +62,19 @@
 .importantInfo {
   background-color: var(--gray-alpha-100);
   border: 1px solid var(--gray-alpha-200);
-  border-radius: 12px;
+  border-radius: 33px;
   padding: 1.5rem;
   margin: 2rem 0;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0px 11px rgba(0, 0, 0, 0.5);
 }
 
 .importantInfo p {
   margin: 0.75rem 0;
   line-height: 1.6;
+  
 }
 
 .importantInfo p:first-child {
@@ -229,9 +231,9 @@ a.secondary {
   font-size: 5.5rem;
   font-weight: 1000;
   line-height: 1.05;
-  color: #1b1b1b;
+  color: #f2f2f2;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   letter-spacing: 0.5px;
-  text-shadow: 0.5px 0 0 currentColor;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -250,8 +252,9 @@ a.secondary {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 2rem;
-  color: #333;
+  color: #242424;
   line-height: 1.8;
+  text-shadow: 0 0px 11px rgba(0, 0, 0, 0.5);
 }
 
 .subheadlineTitle {
@@ -265,9 +268,10 @@ a.secondary {
 
 .sectionTitle {
   font-size: 1.5rem;
-  color: #D21034;
+  color: #ffffff;
   margin: 2.5rem 0 1rem;
   font-weight: 700;
+  text-shadow: 0 0px 11px rgba(0, 0, 0, 0.5);
 }
 
 .dishList {
@@ -321,7 +325,7 @@ a.secondary {
 
 .checklist li:before {
   content: '✓';
-  color: #D21034;
+  color: #65aa16;
   font-weight: bold;
   position: absolute;
   left: 0;
@@ -329,10 +333,10 @@ a.secondary {
 
 .importantInfo {
   background-color: #f9f9f9;
-  border-left: 4px solid #D21034;
+  border-left: 8px solid #65aa16;
   padding: 1.5rem;
   margin: 2rem 0;
-  border-radius: 0 4px 4px 0;
+  border-radius: 33px;
 }
 
 .ctaBox {
@@ -351,7 +355,7 @@ a.secondary {
 .centeredText {
   text-align: center;
   font-style: italic;
-  color: #666;
+  color: #ffffff;
   margin: 1.5rem 0;
 }
 
@@ -401,24 +405,24 @@ a.secondary {
   margin: 0 auto 6rem; /* Increased bottom margin */
   padding: 0 1.5rem;
   width: 100%;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .formHeadline {
   font-family: var(--font-pattaya), serif !important;
-  font-size: 4.5rem;
-  color: #1b1b1b;
-  margin-bottom: 1.25rem;
-  text-align: center;
-  font-weight: 900;
+  font-size: 5.5rem;
+  font-weight: 1000;
+  line-height: 1.05;
+  color: #f2f2f2;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   letter-spacing: 0.5px;
-  line-height: 1.1;
-  text-shadow: 0.5px 0 0 currentColor;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 1rem;
 }
 
 .formSubheadline {
-  color: #666;
+  color: #ffffff;
   text-align: center;
   margin-bottom: 2rem;
   line-height: 1.5;
@@ -442,7 +446,7 @@ a.secondary {
 .checkboxLabel {
   font-size: 0.9rem;
   line-height: 1.5;
-  color: #444;
+  color: #f3f3f3;
   cursor: pointer;
   display: inline;
   font-weight: normal;
@@ -450,7 +454,7 @@ a.secondary {
 }
 
 .privacyLink {
-  color: #D21034;
+  color: #65aa16;
   text-decoration: none;
   font-weight: 500;
 }
@@ -511,6 +515,8 @@ a.secondary {
   height: 100%;
   object-fit: contain;
   object-position: center;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border-radius: 50px;
 }
 
 /* Form Styles */
@@ -530,7 +536,7 @@ a.secondary {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 500;
-  color: #333;
+  color: #e7e7e7;
   font-size: 0.95rem;
 }
 
