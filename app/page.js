@@ -291,12 +291,12 @@ export default function Home() {
                 </div>
                 <div className={footerStyles.footerSection}>
                   <h3>{language === 'es' ? 'Contáctanos' : 'Contact Us'}</h3>
-                  <p>Email: ulffestival2029@gmail.com</p>
+                  <p>Email: PFP2025@gmail.com</p>
                  {/* <p>{language === 'es' ? 'Teléfono' : 'Phone'}: (123) 456-7890</p> */}
                 </div>
               </div>
               <div className={footerStyles.footerBottom}>
-                <p>&copy; {new Date().getFullYear()} Union of Love Festival. {language === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}</p>
+                <p>&copy; {new Date().getFullYear()} Party for Peace Festival. {language === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}</p>
                 <p>{language === 'es' ? 'Hecho con ❤️ y 🎶' : 'Made with ❤️ and 🎶'}</p>
               </div>
             </footer>
