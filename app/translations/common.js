@@ -7,7 +7,7 @@ export const commonTranslations = {
     
     // Haiti section
     haitiTitle: "Celebrating Caribbean Heart & Soul",
-    haitiDescription: "The vibrant culture of the Caribbean takes center stage with spicy griot (fried pork), savory diri ak djon djon (mushroom rice), and sweet, crispy banann peze—all made with the love and resilience that defines Haitian spirit. Let the rhythms of kompa, rara, and vodou jazz move your feet as we honor Haiti's rich history and unshakable joy.",
+    haitiDescription: "The vibrant culture of the Caribbean takes center stage with spicy griot (fried pork), savory diri ak djon djon (mushroom rice), and sweet, crispy banann peze—all made with the love and resilience that defines caribbean spirit. Let the rhythms of kompa, rara, and vodou jazz move your feet as we honor the caribbean's rich history and unshakable joy.",
     
     // Culinary section
     culinaryTitle: "🌎 A Culinary World Tour",
