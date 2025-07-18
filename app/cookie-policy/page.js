@@ -1,4 +1,5 @@
 import styles from '../../app/page.module.css';
+import Link from 'next/link';
 
 export default function CookiePolicy() {
   return (
@@ -21,7 +22,11 @@ export default function CookiePolicy() {
             <p>These cookies are essential to provide you with services available through our website and to enable you to use some of its features. They help to authenticate users and prevent fraudulent use of user accounts.</p>
             
             <h3>2.2 Google Fonts</h3>
-            <p>This site uses Google Fonts, which may set cookies to store preferences and usage information. For more information on how Google uses cookies, please see Google's Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a></p>
+            <p>This site uses Google Fonts, which may set cookies to store preferences and usage information. For more information on how Google uses cookies, please see Google&apos;s Privacy Policy:{' '}
+              <Link href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+                https://policies.google.com/privacy
+              </Link>
+            </p>
             
             <h3>2.3 Email Collection</h3>
             <p>When you submit your email address through our contact forms, we store this information to respond to your inquiry. Your email will not be used for marketing purposes without your explicit consent.</p>
@@ -29,12 +34,12 @@ export default function CookiePolicy() {
 
           <section>
             <h2>3. Disabling Cookies</h2>
-            <p>You can prevent the setting of cookies by adjusting the settings on your browser (see your browser's "Help" for how to do this). Be aware that disabling cookies will affect the functionality of this and many other websites that you visit.</p>
+            <p>You can prevent the setting of cookies by adjusting the settings on your browser (see your browser&apos;s &quot;Help&quot; for how to do this). Be aware that disabling cookies will affect the functionality of this and many other websites that you visit.</p>
           </section>
 
           <section>
             <h2>4. More Information</h2>
-            <p>If you have any questions about our cookie policy, please contact us at [Your Contact Email].</p>
+            <p>If you have any questions about our cookie policy, please contact us at PFP2025@gmail.com.</p>
           </section>
         </div>
       </main>
