@@ -6,8 +6,8 @@ export const commonTranslations = {
     mainDescription: "Get ready for a historic celebration of flavor, rhythm, and unity at the first-ever Union of Love festival where cultures collide in the best way possible! This is more than just an event; it's a movement. A place where we break bread, share stories, and build bridges through food, music, and truth.",
     
     // Haiti section
-    haitiTitle: "🇭🇹 Celebrating Haitian Heart & Soul",
-    haitiDescription: "Haiti's vibrant culture takes center stage with spicy griot (fried pork), savory diri ak djon djon (mushroom rice), and sweet, crispy banann peze—all made with the love and resilience that defines Haitian spirit. Let the rhythms of kompa, rara, and vodou jazz move your feet as we honor Haiti's rich history and unshakable joy.",
+    haitiTitle: "Celebrating Caribbean Heart & Soul",
+    haitiDescription: "The vibrant culture of the Caribbean takes center stage with spicy griot (fried pork), savory diri ak djon djon (mushroom rice), and sweet, crispy banann peze—all made with the love and resilience that defines Haitian spirit. Let the rhythms of kompa, rara, and vodou jazz move your feet as we honor Haiti's rich history and unshakable joy.",
     
     // Culinary section
     culinaryTitle: "🌎 A Culinary World Tour",
@@ -55,7 +55,7 @@ export const commonTranslations = {
       title: "Come Hungry, Leave Full—In Every Way!",
       description: "Whether you're a foodie, a music lover, or just someone who believes in good vibes, Union of Love Festival is your place to feast, dance, and connect. Fill our hearts as much as our plates!",
       whereWhen: "Where & When:",
-      locationDate: "Fort Liberte + 6- 7- 8.7.2025",
+      locationDate: "Fort George Cay + 6- 7- 8.7.2025",
       tickets: "Bracelets:",
       ticketLink: "(Early birds get extra treats!)",
       closing: "See you there—ready to eat, dance, and spread the love! ✨"
@@ -91,8 +91,8 @@ export const commonTranslations = {
     mainDescription: "Prepárate para una celebración histórica de sabor, ritmo y unidad en el primer ULF Festival, ¡un festival donde las culturas chocan de la mejor manera posible! Esto es más que un simple evento; es un movimiento. Un lugar donde partimos el pan, compartimos historias y construimos puentes a través de la comida, la música y la verdad.",
     
     // Haiti section
-    haitiTitle: "🇭🇹 Celebrando el Corazón y el Alma de Haití",
-    haitiDescription: "La vibrante cultura de Haití se roba el escenario con el picante griot (cerdo frito), el sabroso diri ak djon djon (arroz con hongos) y los dulces y crujientes banann peze, todos preparados con el amor y la resiliencia que definen el espíritu haitiano. Deja que los ritmos del kompa, el rara y el jazz vudú te hagan bailar mientras honramos la rica historia y la alegría inquebrantable de Haití.",
+    haitiTitle: "🇭🇹 Celebrando el Corazón y el Alma caribeña",
+    haitiDescription: "La vibrante cultura caribeña se roba el escenario con el picante griot (cerdo frito), el sabroso diri ak djon djon (arroz con hongos) y los dulces y crujientes banann peze, todos preparados con el amor y la resiliencia que definen el espíritu caribeño. Deja que los ritmos del kompa, el rara y el jazz vudú te hagan bailar mientras honramos la rica historia y la alegría inquebrantable del Caribe.",
     
     // Culinary section
     culinaryTitle: "🌎 Un Recorrido Culinario por el Mundo",
@@ -140,7 +140,7 @@ export const commonTranslations = {
       title: "¡Ven con Hambre, Vete Lleno—En Todo Sentido!",
       description: "Ya seas un foodie, un amante de la música o simplemente alguien que cree en las buenas vibras, International ULF Festival es tu lugar para festejar, bailar y conectar. ¡Llena nuestros corazones tanto como nuestros platos!",
       whereWhen: "¿Dónde y Cuándo?",
-      locationDate: "Fort Liberte + 6- 7- 8.7.2025",
+      locationDate: "Fort George Cay + 6- 7- 8.7.2025",
       tickets: "Pulseras:",
       ticketLink: "(¡Los primeros en comprar obtienen beneficios adicionales!)",
       closing: "¡Nos vemos allí—listos para comer, bailar y esparcir amor! ✨"
