@@ -311,7 +311,7 @@ function Scene() {
             <Plane 
               position={[0, 0.4, 1.9]} // Positioned behind the camera
               rotation={[0, Math.PI, 0]} // Facing the opposite direction
-              textureUrl="/images/poster3.jpg"
+              textureUrl="/images/palms.png"
               scale={[1.8, 1.7, 1]}
               depthTest={true}
               depthWrite={true}
