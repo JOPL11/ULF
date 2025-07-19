@@ -118,25 +118,6 @@ export default function Home() {
                 </div>
                 <p>
                   <strong>
-                    <svg width="24" height="16" viewBox="0 0 24 16" style={{
-                      display: 'inline-block',
-                      verticalAlign: 'middle',
-                      marginRight: '8px',
-                      marginBottom: '2px',
-                      overflow: 'visible'
-                    }}>
-                      <rect width="24" height="8" x="0" y="0" fill="#00209F" />
-                      <rect width="24" height="8" x="0" y="8" fill="#D21034" />
-                      <path 
-                        d="M12 5.5C11.5 4.5 10.5 4 9.5 4C7.5 4 6 5.5 6 7.5C6 10 12 13 12 13C12 13 18 10 18 7.5C18 5.5 16.5 4 14.5 4C13.5 4 12.5 4.5 12 5.5Z" 
-                        fill="white" 
-                        stroke="white" 
-                        strokeWidth="0.5"
-                        style={{
-                          transform: 'scale(0.8) translate(1.5px, 1px)'
-                        }}
-                      />
-                    </svg>
                     {t.footer.title}
                   </strong>
                   <br />

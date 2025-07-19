@@ -138,7 +138,7 @@ function Plane({ position, rotation, textureUrl, scale }) {
       texture.magFilter = THREE.LinearFilter;
       texture.anisotropy = 8; // Higher value for better quality at oblique angles
       texture.generateMipmaps = true;
-      texture.encoding = THREE.sRGBEncoding;
+      texture.colorSpace = THREE.SRGBColorSpace;
       texture.premultiplyAlpha = true;
       texture.unpackAlignment = 1; // Ensures proper alignment for non-power-of-2 textures
       texture.needsUpdate = true;
