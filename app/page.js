@@ -94,7 +94,7 @@ export default function Home() {
                   <p>{t.importantInfo.description}</p>
                   
                   <div className={styles.ctaBox}>
-                    <p>🎟️ <strong>{t.importantInfo.tickets}</strong> [Insert Link]</p>
+                    <p>🎟️ <strong>{t.importantInfo.tickets}</strong> </p>
                     <p>🏨 <strong>{t.importantInfo.hotels}</strong></p>
                   </div>
                   

@@ -3,7 +3,7 @@
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
   --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
   --sun-color: #ff8c00;
-  --sun-glow: rgba(255, 140, 0, 0.1);
+  --sun-glow: rgba(255, 140, 11, 0.5);
 
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
@@ -429,7 +429,7 @@ a.secondary {
 
 .importantInfo {
   background-color: #f9f9f9;
-  border-left: 8px solid #65aa16;
+  border-left: 8px solid #1680aa;
   padding: 1.5rem;
   margin: 2rem 0;
   border-radius: 33px;

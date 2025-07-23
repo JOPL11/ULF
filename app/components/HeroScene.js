@@ -215,10 +215,10 @@ function Scene() {
             <Suspense fallback={null}>
               {/* Back plane */}
               <Plane 
-                position={[0, 0, -0.5]} 
+                position={[0, -0.05, -0.5]} 
                 rotation={[0, 0, 0]} 
                 textureUrl="/images/poster2.png" 
-                scale={[1.45, 1.5, 1]}
+                scale={[1.45, 1.7, 1]}
               />
             </Suspense>
             <Suspense fallback={null}>

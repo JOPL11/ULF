@@ -172,7 +172,7 @@ export const commonTranslations = {
   ht: {
     // Hero section
     heroTitle: "Bon kalite manje kilti ak kwizin enternasyonal",
-    mainTitle: "🎉 ULF Festival 2025: Goute Mond Lan, Ansanm Nou Fò! 🌍❤️🔥",
+    mainTitle: "🎉 PFP Festival 2025: Goute Mond Lan, Ansanm Nou Fò! 🌍❤️🔥",
     mainDescription: "Pare kò w pou yon selebrasyon istorik gou, ritm ak inite nan premye ULF Festival kote kilti rankontre nan pi bon fason posib! Sa se plis pase yon evènman; se yon mouvman. Yon kote nou pataje pen, rakonte istwa ak bati pon atravè manje, mizik ak verite.",
     
     // Haiti section
@@ -214,7 +214,7 @@ export const commonTranslations = {
     // Important Info
     importantInfo: {
       edition: "Premye Edisyon – Lanse an 2025!",
-      description: "Sa se sèlman kòmansman an. ULF Festival ap retounen chak ane, pi gwo ak pi fò, men misyon an ap rete menm: inite atravè kilti.",
+      description: "Sa se sèlman kòmansman an. PFP Festival ap retounen chak ane, pi gwo ak pi fò, men misyon an ap rete menm: inite atravè kilti.",
       tickets: "Tikè yo ap vann vit!",
       hotels: "Òtèl yo rezève apa – Fè plan ou byen bonè!",
       closing: "Vini ak grangou. Ale plen—nan vant ou, nan kè w, ak nan nanm ou. Ann fè istwa ansanm. ❤️🔥"
@@ -223,7 +223,7 @@ export const commonTranslations = {
     // Footer
     footer: {
       title: "Vini ak Grangou, Ale Plen—Nan Tout Sans!",
-      description: "Kit ou se yon moun ki renmen manje, renmen mizik, oswa senpleman yon moun ki kwè nan bon enèji, ULF Festival Entènasyonal la se kote ou ye pou fè fèt, danse, ak konekte. Ranje kè nou menm jan ak asyèt nou yo!",
+      description: "Kit ou se yon moun ki renmen manje, renmen mizik, oswa senpleman yon moun ki kwè nan bon enèji, PFP Festival Entènasyonal la se kote ou ye pou fè fèt, danse, ak konekte. Ranje kè nou menm jan ak asyèt nou yo!",
       whereWhen: "Ki Kote & Ki Lè:",
       locationDate: "Fort Liberte + 6- 7- 8.7.2025",
       tickets: "Braslè:",
@@ -257,11 +257,11 @@ export const commonTranslations = {
   fr: {
     // Hero section
     heroTitle: "Culture culinaire d'excellence et cuisine internationale",
-    mainTitle: "🎉 ULF Festival 2025 : Goûtez le Monde, Unissons-nous ! 🌍❤️🔥",
-    mainDescription: "Préparez-vous pour une célébration historique de saveurs, de rythmes et d'unité lors du tout premier ULF Festival — un festival où les cultures se rencontrent de la plus belle des manières ! Plus qu'un simple événement ; c'est un mouvement. Un lieu où nous partageons le pain, échangeons des histoires et construisons des ponts à travers la nourriture, la musique et la vérité.",
+    mainTitle: "🎉 PFP Festival 2025 : Goûtez le Monde, Unissons-nous ! 🌍❤️🔥",
+    mainDescription: "Préparez-vous pour une célébration historique de saveurs, de rythmes et d'unité lors du tout premier PFP Festival — un festival où les cultures se rencontrent de la plus belle des manières ! Plus qu'un simple événement ; c'est un mouvement. Un lieu où nous partageons le pain, échangeons des histoires et construisons des ponts à travers la nourriture, la musique et la vérité.",
     
     // Haiti section
-    haitiTitle: "🇭🇹 Célébrons l'Âme Haïtienne",
+    haitiTitle: "🇭🇹 Célébrons l'Âme Caribienne",
     haitiDescription: "La culture vibrante d'Haïti est à l'honneur avec du griot épicé, du riz djon djon savoureux et des bananes plantains croustillantes — le tout préparé avec l'amour et la résilience qui caractérisent l'esprit haïtien. Laissez-vous emporter par les rythmes du kompa, du rara et du jazz vodou alors que nous célébrons la riche histoire et la joie inébranlable d'Haïti.",
     
     // Culinary section
@@ -299,7 +299,7 @@ export const commonTranslations = {
     // Important Info
     importantInfo: {
       edition: "Première Édition – Lancement en 2025 !",
-      description: "Ce n'est que le début.   ULF Festival Fest reviendra chaque année, plus grand et plus audacieux, mais la mission reste la même : l'unité à travers la culture.",
+      description: "Ce n'est que le début.   PFP Festival Fest reviendra chaque année, plus grand et plus audacieux, mais la mission reste la même : l'unité à travers la culture.",
       tickets: "Les billets partent vite !",
       hotels: "Hôtels à réserver séparément – Réservez tôt !",
       closing: "Venez affamés. Repartez rassasiés — dans votre ventre, votre cœur et votre âme. Écrivons l'histoire ensemble. ❤️🔥"
@@ -308,7 +308,7 @@ export const commonTranslations = {
     // Footer
     footer: {
       title: "Venez Affamés, Repartez Rassasiés — Dans Tous les Sens !",
-      description: "Que vous soyez gourmand, amateur de musique ou simplement quelqu'un qui croit aux bonnes ondes, International ULF Festival est l'endroit idéal pour festoyer, danser et créer des liens. Remplissez nos cœurs autant que nos assiettes !",
+      description: "Que vous soyez gourmand, amateur de musique ou simplement quelqu'un qui croit aux bonnes ondes, International PFP Festival est l'endroit idéal pour festoyer, danser et créer des liens. Remplissez nos cœurs autant que nos assiettes !",
       whereWhen: "Où & Quand :",
       locationDate: "Fort Liberte + 6- 7- 8.7.2025",
       tickets: "Bracelets :",
