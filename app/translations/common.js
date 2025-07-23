@@ -2,7 +2,7 @@ export const commonTranslations = {
   en: {
     // Hero section
     heroTitle: "Awesome quality food culture & international cuisine",
-    mainTitle: "🎉 ULF Festival 2025: Taste the World, Unite as One! 🌍❤️🔥",
+    mainTitle: "🎉 PFP Festival 2025: Taste the World, Unite as One! 🌍❤️🔥",
     mainDescription: "Get ready for a historic celebration of flavor, rhythm, and unity at the first-ever Union of Love festival where cultures collide in the best way possible! This is more than just an event; it's a movement. A place where we break bread, share stories, and build bridges through food, music, and truth.",
     
     // Haiti section
@@ -87,8 +87,8 @@ export const commonTranslations = {
   es: {
     // Hero section
     heroTitle: "Cultura gastronómica de alta calidad y cocina internacional",
-    mainTitle: "🎉 ULF Festival 2025: ¡Prueba el Mundo, Únete como Uno! 🌍❤️🔥",
-    mainDescription: "Prepárate para una celebración histórica de sabor, ritmo y unidad en el primer ULF Festival, ¡un festival donde las culturas chocan de la mejor manera posible! Esto es más que un simple evento; es un movimiento. Un lugar donde partimos el pan, compartimos historias y construimos puentes a través de la comida, la música y la verdad.",
+    mainTitle: "🎉 PFP Festival 2025: ¡Prueba el Mundo, Únete como Uno! 🌍❤️🔥",
+    mainDescription: "Prepárate para una celebración histórica de sabor, ritmo y unidad en el primer PFP Festival, ¡un festival donde las culturas chocan de la mejor manera posible! Esto es más que un simple evento; es un movimiento. Un lugar donde partimos el pan, compartimos historias y construimos puentes a través de la comida, la música y la verdad.",
     
     // Haiti section
     haitiTitle: "🇭🇹 Celebrando el Corazón y el Alma caribeña",
@@ -129,7 +129,7 @@ export const commonTranslations = {
     // Important Info
     importantInfo: {
       edition: "Primera Edición – ¡Lanzamiento en 2025!",
-      description: "Esto es solo el comienzo. ULF Festival regresará cada año, más grande y audaz, pero la misión seguirá siendo la misma: unidad a través de la cultura.",
+      description: "Esto es solo el comienzo. PFP Festival regresará cada año, más grande y audaz, pero la misión seguirá siendo la misma: unidad a través de la cultura.",
       tickets: "¡Las entradas se agotan rápido!",
       hotels: "Hoteles reservados por separado – ¡Planifica tu estadía con anticipación!",
       closing: "Ven con hambre. Vete lleno—de comida, de corazón y de alma. Hagamos historia juntos. ❤️🔥"
@@ -138,7 +138,7 @@ export const commonTranslations = {
     // Footer
     footer: {
       title: "¡Ven con Hambre, Vete Lleno—En Todo Sentido!",
-      description: "Ya seas un foodie, un amante de la música o simplemente alguien que cree en las buenas vibras, International ULF Festival es tu lugar para festejar, bailar y conectar. ¡Llena nuestros corazones tanto como nuestros platos!",
+      description: "Ya seas un foodie, un amante de la música o simplemente alguien que cree en las buenas vibras, International PFP Festival es tu lugar para festejar, bailar y conectar. ¡Llena nuestros corazones tanto como nuestros platos!",
       whereWhen: "¿Dónde y Cuándo?",
       locationDate: "Fort George Cay + 6- 7- 8.7.2025",
       tickets: "Pulseras:",
@@ -173,7 +173,7 @@ export const commonTranslations = {
     // Hero section
     heroTitle: "Bon kalite manje kilti ak kwizin enternasyonal",
     mainTitle: "🎉 PFP Festival 2025: Goute Mond Lan, Ansanm Nou Fò! 🌍❤️🔥",
-    mainDescription: "Pare kò w pou yon selebrasyon istorik gou, ritm ak inite nan premye ULF Festival kote kilti rankontre nan pi bon fason posib! Sa se plis pase yon evènman; se yon mouvman. Yon kote nou pataje pen, rakonte istwa ak bati pon atravè manje, mizik ak verite.",
+    mainDescription: "Pare kò w pou yon selebrasyon istorik gou, ritm ak inite nan premye PFP Festival kote kilti rankontre nan pi bon fason posib! Sa se plis pase yon evènman; se yon mouvman. Yon kote nou pataje pen, rakonte istwa ak bati pon atravè manje, mizik ak verite.",
     
     // Haiti section
     haitiTitle: "Selebre Kè ak Nanm Ayisyen an",
