@@ -19,8 +19,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Union of Love Festival",
-  description: "International Cuisine, Music & People Festival / Haiti 2025",
+  title: "Middle Caicos Festival",
+  description: "International Cuisine, Music & People Festival / Middle Caicos 2025",
 };
 
 export const viewport = {
