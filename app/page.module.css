@@ -183,7 +183,7 @@ a.secondary {
 
 @media (min-width: 768px) {
   .heroContainer {
-    width: 100%;
+    width: 95%;
     height: calc(82vh + 40px);
     min-height: 540px;
     position: relative;
