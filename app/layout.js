@@ -21,6 +21,9 @@ const inter = Inter({
 export const metadata = {
   title: "Middle Caicos Festival",
   description: "International Cuisine, Music & People Festival / Middle Caicos 2025",
+  icons: {
+    icon: 'images/favicon.ico',
+  },
 };
 
 export const viewport = {

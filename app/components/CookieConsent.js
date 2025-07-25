@@ -31,8 +31,8 @@ export default function CookieConsent() {
     <div className={styles.cookieConsent}>
       <div className={styles.cookieContent}>
         <p>
-          We use cookies to enhance your experience, including serving Google Fonts.
-          By clicking &quot;Accept&quot;, you agree to our use of cookies as described in our
+          We don&apos;t use cookies to enhance your experience, Fonts are hosted locally.
+          By clicking &quot;Accept&quot; or &quot;Decline&quot;, you agree to our lack of using cookies as described in our
           <Link href="/cookie-policy" className={styles.cookieLink}>
             Cookie Policy
           </Link>.
